@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 620" width="1120" height="620" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="620" fill="#ffffff"/>
+  <rect x="0" y="0" width="1120" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">Authentication, Cryptographic Session &amp; Role-Based Access Control (RBAC)</text>
+  <text x="32" y="56" class="subtitle">Server-enforced RBAC across 5 factory accounts with dual backend crypto verification and 12h HS256 JWT tokens</text>
+  <line x1="32" y1="68" x2="1088" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="40" y="95" width="320" height="210" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M 48 95 H 352 Q 360 95 360 103 V 123 H 40 V 103 Q 40 95 48 95 Z" fill="#1d4ed8"/>
+  <text x="52" y="114" class="box-title-w">1. Client Login &amp; Token Flow</text>
+  <text x="52" y="141" class="txt">UI: LoginModal.jsx (Role select + masked PIN)</text>
+  <text x="52" y="158" class="txt">POST /api/auth/login -&gt; JSON {{username, pin}}</text>
+  <text x="52" y="175" class="txt">Stores JWT in localStorage (bhel_auth_token)</text>
+  <text x="52" y="192" class="txt">Every request attaches Authorization: Bearer</text>
+  <text x="52" y="209" class="txt">HTTP 401 auto-clears session via auth:expired</text>
+  <text x="52" y="226" class="txt">GET /api/auth/me validates active session</text>
+
+  <rect x="400" y="95" width="340" height="210" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <path d="M 408 95 H 732 Q 740 95 740 103 V 123 H 400 V 103 Q 400 95 408 95 Z" fill="#c2410c"/>
+  <text x="412" y="114" class="box-title-w">2. Worker &amp; Express Auth Guards</text>
+  <text x="412" y="141" class="txt">Workers: checkLoginRateLimit (20 req/min/IP)</text>
+  <text x="412" y="158" class="txt">Workers Crypto: Web Crypto PBKDF2-SHA256</text>
+  <text x="412" y="175" class="txt">  (50,000 iterations, 16-byte salt, constant-time)</text>
+  <text x="412" y="192" class="txt">Express Crypto: bcryptjs hash comparison</text>
+  <text x="412" y="209" class="txt">Production Guard: Throws if JWT_SECRET unset</text>
+  <text x="412" y="226" class="txt">Audit Trail: USER_LOGIN / USER_LOGOUT logged</text>
+
+  <rect x="780" y="95" width="300" height="210" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 788 95 H 1072 Q 1080 95 1080 103 V 123 H 780 V 103 Q 780 95 788 95 Z" fill="#047857"/>
+  <text x="792" y="114" class="box-title-w">3. Shared Authorization Rules</text>
+  <text x="792" y="141" class="txt">All authenticated roles can READ:</text>
+  <text x="792" y="158" class="txt">  Panels, Plans, Daily Status, Overview,</text>
+  <text x="792" y="175" class="txt">  Production Reports &amp; Master Data</text>
+  <text x="792" y="192" class="txt">What-If Simulator: Isolated from DB;</text>
+  <text x="792" y="209" class="txt">  scenario delete restricted to author/Admin</text>
+  <text x="792" y="226" class="txt">All write endpoints enforce Area or Admin</text>
+
+  <path d="M 360 200 L 400 200" class="arrow"/>
+  <path d="M 740 200 L 780 200" class="arrow"/>
+
+  <rect x="40" y="340" width="1040" height="240" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="1.5"/>
+  <path d="M 48 340 H 1072 Q 1080 340 1080 348 V 368 H 40 V 348 Q 40 340 48 340 Z" fill="#1e293b"/>
+  <text x="52" y="359" class="box-title-w">Server-Enforced Role Permission Matrix (middleware + WorkflowEngine.canUserOperatePanel)</text>
+  <text x="52" y="386" class="txt">Role: KSM (Support &amp; Feeder Lead)  | Write: Register panels (POST /panels), Bulk Excel import, KSM stages (1, 6, 7, 8 / DCS 1, 4, 5, 6), KSM daily &amp; sub-assembly, KSM custom manpower</text>
+  <text x="52" y="403" class="txt">Role: PDR (Mechanical &amp; Elec Lead) | Write: PDR stages (Mech 2, HV Cabling, Mech 3, LV Wiring / DCS Mech, Wiring), PDR monthly plans, PDR daily status, PDR custom manpower</text>
+  <text x="52" y="420" class="txt">Role: CRM (Electrical Cabling Lead)| Write: Shared HV Cabling (Traction Stg 3) &amp; DCS Wiring (Stg 3) when CRM team selected, CRM monthly plans, CRM daily status, CRM custom manpower</text>
+  <text x="52" y="437" class="txt">Roles: AKR &amp; CKG (Master Admins)   | Write: FULL ACCESS across all areas + Admin-Only endpoints guarded by requireAdmin:</text>
+  <text x="52" y="454" class="txt">   -&gt; PATCH /api/panels/:id/admin-edit | POST /api/panels/:id/undo | DELETE /api/panels/:id</text>
+  <text x="52" y="471" class="txt">   -&gt; DELETE /api/custom-manpower/:id  | GET /api/backup/export-json &amp; export-csv | POST /api/backup/restore</text>
+
+</svg>

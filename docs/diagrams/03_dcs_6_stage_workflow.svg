@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 600" width="1100" height="600" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1100" height="600" fill="#ffffff"/>
+  <rect x="0" y="0" width="1100" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">DCS Automation Cubicle — Consolidated 6-Stage Assembly State Machine</text>
+  <text x="32" y="56" class="subtitle">Streamlined 6-stage lifecycle across KSM mechanical feeder, PDR/CRM wiring, and final QC &amp; dispatch</text>
+  <line x1="32" y1="68" x2="1068" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="55" y="110" width="290" height="118" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M 63 110 H 337 Q 345 110 345 118 V 138 H 55 V 118 Q 55 110 63 110 Z" fill="#0284c7"/>
+  <text x="67" y="129" class="box-title-w">1. Door / Side Cover</text>
+  <text x="67" y="156" class="txt">Owning Area: KSM</text>
+  <text x="67" y="173" class="txt">KSM-OP-1 / KSM-OP-2</text>
+  <text x="67" y="190" class="txt">Panel arrival &amp; doors</text>
+  <path d="M 345 169 L 405 169" class="arrow"/>
+  <rect x="405" y="110" width="290" height="118" rx="8" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
+  <path d="M 413 110 H 687 Q 695 110 695 118 V 138 H 405 V 118 Q 405 110 413 110 Z" fill="#7c3aed"/>
+  <text x="417" y="129" class="box-title-w">2. Mechanical</text>
+  <text x="417" y="156" class="txt">Owning Area: PDR</text>
+  <text x="417" y="173" class="txt">PDR-MECH-1..4</text>
+  <text x="417" y="190" class="txt">Mechanical assembly</text>
+  <path d="M 695 169 L 755 169" class="arrow"/>
+  <rect x="755" y="110" width="290" height="118" rx="8" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.5"/>
+  <path d="M 763 110 H 1037 Q 1045 110 1045 118 V 138 H 755 V 118 Q 755 110 763 110 Z" fill="#6d28d9"/>
+  <text x="767" y="129" class="box-title-w">3. Wiring</text>
+  <text x="767" y="156" class="txt">Owning Area: PDR/CRM</text>
+  <text x="767" y="173" class="txt">PDR Teams 1-6 OR</text>
+  <text x="767" y="190" class="txt">CRM Teams 1-9</text>
+  <rect x="55" y="305" width="290" height="118" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M 63 305 H 337 Q 345 305 345 313 V 333 H 55 V 313 Q 55 305 63 305 Z" fill="#0284c7"/>
+  <text x="67" y="324" class="box-title-w">4. Two-Test QC &amp; Testing</text>
+  <text x="67" y="351" class="txt">Owning Area: KSM</text>
+  <text x="67" y="368" class="txt">KSM QC &amp; External</text>
+  <text x="67" y="385" class="txt">Testing (KSM tracked)</text>
+  <path d="M 345 364 L 405 364" class="arrow"/>
+  <rect x="405" y="305" width="290" height="118" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M 413 305 H 687 Q 695 305 695 313 V 333 H 405 V 313 Q 405 305 413 305 Z" fill="#0284c7"/>
+  <text x="417" y="324" class="box-title-w">5. PD Activity</text>
+  <text x="417" y="351" class="txt">Owning Area: KSM</text>
+  <text x="417" y="368" class="txt">KSM-OP-1, KSM-OP-2,</text>
+  <text x="417" y="385" class="txt">KSM Team</text>
+  <path d="M 695 364 L 755 364" class="arrow"/>
+  <rect x="755" y="305" width="290" height="118" rx="8" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 763 305 H 1037 Q 1045 305 1045 313 V 333 H 755 V 313 Q 755 305 763 305 Z" fill="#059669"/>
+  <text x="767" y="324" class="box-title-w">6. PQ &amp; Dispatch</text>
+  <text x="767" y="351" class="txt">Owning Area: KSM</text>
+  <text x="767" y="368" class="txt">KSM QC / Despatch</text>
+  <text x="767" y="385" class="txt">-&gt; Status: Done</text>
+  <path d="M 900 228 L 900 265 L 200 265 L 200 305" class="arrow"/>
+  <rect x="55" y="455" width="990" height="115" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 63 455 H 1037 Q 1045 455 1045 463 V 483 H 55 V 463 Q 55 455 63 455 Z" fill="#334155"/>
+  <text x="67" y="474" class="box-title-w">DCS Consolidation &amp; Role Handoff Rules</text>
+  <text x="67" y="501" class="txt">Stage 3 Wiring supports both PDR Electrical (Teams 1-6) and CRM Electrical (Teams 1-9); area dynamically locks to assignee's shop</text>
+  <text x="67" y="518" class="txt">Historical Compatibility: Pre-enhancement 8-stage DCS logs (stages 5, 6, 7, 8) map seamlessly to consolidated stages 4, 5, 6</text>
+  <text x="67" y="535" class="txt">Daily Auto-Logged Done aggregates distinct completed stage_history records per assigned worker/team and calendar date</text>
+</svg>

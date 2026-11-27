@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 520" width="1120" height="520" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="520" fill="#ffffff"/>
+  <rect x="0" y="0" width="1120" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">Frontend React Component Architecture &amp; 7-Tab Navigation Map</text>
+  <text x="32" y="56" class="subtitle">Color-coded operational UI in client/src/components/ protected by AuthContext and ErrorBoundary</text>
+  <line x1="32" y1="68" x2="1088" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40" y="88" width="1040" height="74" rx="8" fill="#f8fafc" stroke="#1e293b" stroke-width="1.5"/>
+  <path d="M 48 88 H 1072 Q 1080 88 1080 96 V 116 H 40 V 96 Q 40 88 48 88 Z" fill="#0f172a"/>
+  <text x="52" y="107" class="box-title-w">Root Shell — App.jsx + AuthProvider + ErrorBoundary</text>
+  <text x="52" y="134" class="txt">Unauthenticated -&gt; LoginModal.jsx (Role + PIN)  |  Authenticated -&gt; Header.jsx (gradient bar, role badge, Sign Out) + Navigation.jsx + Active Tab + Footer</text>
+  <rect x="40" y="190" width="245" height="130" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+  <path d="M 48 190 H 277 Q 285 190 285 198 V 218 H 40 V 198 Q 40 190 48 190 Z" fill="#7c3aed"/>
+  <text x="52" y="209" class="box-title-w">1 · Plan: Targets &amp; Capacity</text>
+  <text x="52" y="236" class="txt">Color Theme: Purple</text>
+  <text x="52" y="253" class="txt">PlanTargets.jsx</text>
+  <text x="52" y="270" class="txt">Monthly target grid,</text>
+  <text x="52" y="287" class="txt">Load % &amp; 409 modal</text>
+  <rect x="305" y="190" width="245" height="130" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M 313 190 H 542 Q 550 190 550 198 V 218 H 305 V 198 Q 305 190 313 190 Z" fill="#2563eb"/>
+  <text x="317" y="209" class="box-title-w">2 · Execute: Panels (Default)</text>
+  <text x="317" y="236" class="txt">Color Theme: Blue</text>
+  <text x="317" y="253" class="txt">ExecutePanels.jsx</text>
+  <text x="317" y="270" class="txt">New/Excel/Start/Complete/</text>
+  <text x="317" y="287" class="txt">Hold/Undo/Edit/History</text>
+  <rect x="570" y="190" width="245" height="130" rx="8" fill="#ffffff" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 578 190 H 807 Q 815 190 815 198 V 218 H 570 V 198 Q 570 190 578 190 Z" fill="#059669"/>
+  <text x="582" y="209" class="box-title-w">3 · Daily Status</text>
+  <text x="582" y="236" class="txt">Color Theme: Green</text>
+  <text x="582" y="253" class="txt">DailyStatus.jsx</text>
+  <text x="582" y="270" class="txt">Worker roster, Auto-Done,</text>
+  <text x="582" y="287" class="txt">Variance &amp; 8 KSM subs</text>
+  <rect x="835" y="190" width="245" height="130" rx="8" fill="#ffffff" stroke="#ea580c" stroke-width="1.5"/>
+  <path d="M 843 190 H 1072 Q 1080 190 1080 198 V 218 H 835 V 198 Q 835 190 843 190 Z" fill="#ea580c"/>
+  <text x="847" y="209" class="box-title-w">4 · Overview &amp; Bottlenecks</text>
+  <text x="847" y="236" class="txt">Color Theme: Orange</text>
+  <text x="847" y="253" class="txt">Overview.jsx</text>
+  <text x="847" y="270" class="txt">KPIs, Area cards, Held,</text>
+  <text x="847" y="287" class="txt">Overdue &amp; Bottlenecks</text>
+  <rect x="40" y="345" width="245" height="130" rx="8" fill="#ffffff" stroke="#0891b2" stroke-width="1.5"/>
+  <path d="M 48 345 H 277 Q 285 345 285 353 V 373 H 40 V 353 Q 40 345 48 345 Z" fill="#0891b2"/>
+  <text x="52" y="364" class="box-title-w">5 · Production Reports</text>
+  <text x="52" y="391" class="txt">Color Theme: Cyan</text>
+  <text x="52" y="408" class="txt">ProductionReports.jsx</text>
+  <text x="52" y="425" class="txt">Date-range analytics &amp;</text>
+  <text x="52" y="442" class="txt">formula-safe CSV export</text>
+  <rect x="305" y="345" width="245" height="130" rx="8" fill="#ffffff" stroke="#4f46e5" stroke-width="1.5"/>
+  <path d="M 313 345 H 542 Q 550 345 550 353 V 373 H 305 V 353 Q 305 345 313 345 Z" fill="#4f46e5"/>
+  <text x="317" y="364" class="box-title-w">What-If Simulator</text>
+  <text x="317" y="391" class="txt">Color Theme: Indigo</text>
+  <text x="317" y="408" class="txt">WhatIfSimulator.jsx</text>
+  <text x="317" y="425" class="txt">Feasibility solver &amp;</text>
+  <text x="317" y="442" class="txt">scenario comparisons</text>
+  <rect x="570" y="345" width="245" height="130" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 578 345 H 807 Q 815 345 815 353 V 373 H 570 V 353 Q 570 345 578 345 Z" fill="#475569"/>
+  <text x="582" y="364" class="box-title-w">Backup &amp; Master Data</text>
+  <text x="582" y="391" class="txt">Color Theme: Slate</text>
+  <text x="582" y="408" class="txt">BackupMasterData.jsx</text>
+  <text x="582" y="425" class="txt">JSON/CSV backups, merge</text>
+  <text x="582" y="442" class="txt">restore &amp; custom teams</text>
+  <rect x="835" y="345" width="245" height="130" rx="8" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <path d="M 843 345 H 1072 Q 1080 345 1080 353 V 373 H 835 V 353 Q 835 345 843 345 Z" fill="#1e40af"/>
+  <text x="847" y="364" class="box-title-w">Execute Modals (7 Dialogs)</text>
+  <text x="847" y="391" class="txt">NewPanelModal, ExcelImportModal</text>
+  <text x="847" y="408" class="txt">StartStageModal (+ Others worker)</text>
+  <text x="847" y="425" class="txt">HoldModal, EditPanelModal</text>
+  <text x="847" y="442" class="txt">PanelHistoryModal, UndoConfirmModal</text>
+</svg>

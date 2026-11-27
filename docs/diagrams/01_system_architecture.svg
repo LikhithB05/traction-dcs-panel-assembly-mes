@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 650" width="1120" height="650" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="650" fill="#ffffff"/>
+  <rect x="0" y="0" width="1120" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">BHEL Traction &amp; DCS Panel Assembly Portal — Dual-Backend System Architecture</text>
+  <text x="32" y="56" class="subtitle">Unified React 18 + Vite SPA backed by Cloudflare Workers (Hono + D1) in live production and Node.js 24 (Express + node:sqlite) for local/Docker deployments</text>
+  <line x1="32" y1="68" x2="1088" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="40" y="90" width="1040" height="108" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+  <path d="M 48 90 H 1072 Q 1080 90 1080 98 V 118 H 40 V 98 Q 40 90 48 90 Z" fill="#1d4ed8"/>
+  <text x="52" y="109" class="box-title-w">Presentation Layer — Shop-Floor Web Client (client/src/)</text>
+  <text x="52" y="136" class="txt">React 18.3.1 + Vite 6 + Tailwind CSS 3.4 + Lucide Icons + SheetJS (xlsx) bulk Excel/CSV import</text>
+  <text x="52" y="153" class="txt">AuthContext + api.js Bearer JWT transport (localStorage: bhel_auth_token) | ErrorBoundary | 7 color-coded navigation tabs</text>
+  <text x="52" y="170" class="txt">LoginModal -&gt; ExecutePanels | PlanTargets | DailyStatus | Overview | ProductionReports | WhatIfSimulator | BackupMasterData</text>
+
+  <path d="M 320 198 L 320 245" class="arrow-blue"/>
+  <path d="M 800 198 L 800 245" class="arrow-blue"/>
+  <text x="330" y="226" class="txt-sm">HTTPS REST /api/* (Live Cloudflare Worker Edge)</text>
+  <text x="810" y="226" class="txt-sm">HTTP REST /api/* (Local / Container / Test Suite)</text>
+
+  <rect x="40" y="248" width="490" height="225" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <path d="M 48 248 H 522 Q 530 248 530 256 V 276 H 40 V 256 Q 40 248 48 248 Z" fill="#c2410c"/>
+  <text x="52" y="267" class="box-title-w">Primary Live Edge Backend — Cloudflare Workers (worker/src/)</text>
+  <text x="52" y="294" class="txt">Framework: Hono 4.6.14 + Static Assets binding (SPA + API single origin)</text>
+  <text x="52" y="311" class="txt">Routes: authRoutes, panelRoutes, planDailyRoutes, overviewReportRoutes, smbRoutes</text>
+  <text x="52" y="328" class="txt">Security: auth.js (20 req/60s rate limit, X-Frame-Options: DENY, strict CORS)</text>
+  <text x="52" y="345" class="txt">Crypto: crypto.js (Web Crypto PBKDF2-SHA256 50k iters + HS256 JWT 12h)</text>
+  <text x="52" y="362" class="txt">Services: WorkflowEngine, CapacityService, DailyStatusService, BottleneckService, SimulatorService</text>
+  <text x="52" y="379" class="txt">Health: GET /health checks D1 connectivity + runtime status</text>
+
+  <rect x="590" y="248" width="490" height="225" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <path d="M 598 248 H 1072 Q 1080 248 1080 256 V 276 H 590 V 256 Q 590 248 598 248 Z" fill="#6d28d9"/>
+  <text x="602" y="267" class="box-title-w">Local / Container / Node Backend — Express Server (server/src/)</text>
+  <text x="602" y="294" class="txt">Runtime: Node.js &gt;=22.5.0 (verified on v24.19.0) + Express 4.21.2</text>
+  <text x="602" y="311" class="txt">Routes: routes/api.js + 9 domain controllers + single-port static client/dist serving</text>
+  <text x="602" y="328" class="txt">Auth &amp; RBAC: authMiddleware.js (JWT) + permissionMiddleware.js (Area + Admin gates)</text>
+  <text x="602" y="345" class="txt">Crypto: bcryptjs (10 rounds) + jsonwebtoken (12h expiry) | CORS policy delegate</text>
+  <text x="602" y="362" class="txt">Services: Shared domain formulas parity across Workflow, Capacity, Bottleneck &amp; Simulator</text>
+  <text x="602" y="379" class="txt">Test Suite: 7 automated Node --test files (auth, workflow, daily, capacity, backup, undo, deploy)</text>
+
+  <path d="M 285 473 L 285 520" class="arrow"/>
+  <path d="M 835 473 L 835 520" class="arrow"/>
+
+  <rect x="40" y="522" width="490" height="102" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <path d="M 48 522 H 522 Q 530 522 530 530 V 550 H 40 V 530 Q 40 522 48 522 Z" fill="#0e7490"/>
+  <text x="52" y="541" class="box-title-w">Cloudflare D1 Serverless SQLite (bhel-portal-db)</text>
+  <text x="52" y="568" class="txt">Managed SQLite via schema worker/migrations/0001_init.sql</text>
+  <text x="52" y="585" class="txt">10 relational tables + 13 indexes + atomic db.batch() writes</text>
+  <text x="52" y="602" class="txt">Live endpoint: https://bhel-portal.likhithb2005.workers.dev (Read-only verified)</text>
+
+  <rect x="590" y="522" width="490" height="102" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 598 522 H 1072 Q 1080 522 1080 530 V 550 H 590 V 530 Q 590 522 598 522 Z" fill="#047857"/>
+  <text x="602" y="541" class="box-title-w">Local / Container SQLite (node:sqlite DatabaseSync)</text>
+  <text x="602" y="568" class="txt">PRAGMA journal_mode = WAL | PRAGMA foreign_keys = ON</text>
+  <text x="602" y="585" class="txt">Nested savepoints &amp; BEGIN IMMEDIATE transactions in database.js</text>
+  <text x="602" y="602" class="txt">Target file: server/data/bhel_portal.sqlite (gitignored; isolated test DB in CI)</text>
+
+</svg>

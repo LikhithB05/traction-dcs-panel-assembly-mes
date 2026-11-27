@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 625" width="1120" height="625" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="625" fill="#ffffff"/>
+  <rect x="0" y="0" width="1120" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">Relational Database Schema &amp; Entity Relationships (10 Tables, SQLite WAL / Cloudflare D1)</text>
+  <text x="32" y="56" class="subtitle">Identical 10-table core schema across worker/migrations/0001_init.sql and server/src/db/database.js with ON DELETE CASCADE referential integrity</text>
+  <line x1="32" y1="68" x2="1088" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="40" y="95" width="250" height="145" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M 48 95 H 282 Q 290 95 290 103 V 123 H 40 V 103 Q 40 95 48 95 Z" fill="#1d4ed8"/>
+  <text x="52" y="114" class="box-title-w">users</text>
+  <text x="52" y="141" class="txt">PK id (TEXT)</text>
+  <text x="52" y="158" class="txt">UQ username (TEXT)</text>
+  <text x="52" y="175" class="txt">password_hash (TEXT)</text>
+  <text x="52" y="192" class="txt">role (KSM|PDR|CRM|AKR|CKG)</text>
+  <text x="52" y="209" class="txt">is_admin (INTEGER)</text>
+  <rect x="320" y="95" width="270" height="175" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+  <path d="M 328 95 H 582 Q 590 95 590 103 V 123 H 320 V 103 Q 320 95 328 95 Z" fill="#6d28d9"/>
+  <text x="332" y="114" class="box-title-w">panels</text>
+  <text x="332" y="141" class="txt">PK id (TEXT, e.g. TR-101)</text>
+  <text x="332" y="158" class="txt">type (Traction|DCS), project, priority</text>
+  <text x="332" y="175" class="txt">start_date, due_date</text>
+  <text x="332" y="192" class="txt">current_stage (INT), current_area</text>
+  <text x="332" y="209" class="txt">status (Waiting|In Progress|Held|Done)</text>
+  <text x="332" y="226" class="txt">assigned_to, hold_reason, timestamps</text>
+  <rect x="620" y="95" width="230" height="165" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 628 95 H 842 Q 850 95 850 103 V 123 H 620 V 103 Q 620 95 628 95 Z" fill="#047857"/>
+  <text x="632" y="114" class="box-title-w">stage_history</text>
+  <text x="632" y="141" class="txt">PK id (TEXT)</text>
+  <text x="632" y="158" class="txt">FK panel_id -&gt; panels(id) CASCADE</text>
+  <text x="632" y="175" class="txt">stage_number, stage_name, area</text>
+  <text x="632" y="192" class="txt">assigned_to, started_at, completed_at</text>
+  <text x="632" y="209" class="txt">undone_at, undone_by, undo_reason</text>
+  <rect x="880" y="95" width="200" height="130" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <path d="M 888 95 H 1072 Q 1080 95 1080 103 V 123 H 880 V 103 Q 880 95 888 95 Z" fill="#c2410c"/>
+  <text x="892" y="114" class="box-title-w">hold_history</text>
+  <text x="892" y="141" class="txt">PK id (TEXT)</text>
+  <text x="892" y="158" class="txt">FK panel_id -&gt; panels(id)</text>
+  <text x="892" y="175" class="txt">stage_number, reason</text>
+  <text x="892" y="192" class="txt">held_at, resumed_at</text>
+  <rect x="40" y="310" width="250" height="130" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 48 310 H 282 Q 290 310 290 318 V 338 H 40 V 318 Q 40 310 48 310 Z" fill="#334155"/>
+  <text x="52" y="329" class="box-title-w">monthly_plans</text>
+  <text x="52" y="356" class="txt">PK id (TEXT)</text>
+  <text x="52" y="373" class="txt">UQ (month, team_or_person)</text>
+  <text x="52" y="390" class="txt">area, traction_plan, dcs_plan</text>
+  <text x="52" y="407" class="txt">updated_at (TEXT)</text>
+  <rect x="320" y="310" width="250" height="130" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 328 310 H 562 Q 570 310 570 318 V 338 H 320 V 318 Q 320 310 328 310 Z" fill="#334155"/>
+  <text x="332" y="329" class="box-title-w">daily_status</text>
+  <text x="332" y="356" class="txt">PK id (TEXT)</text>
+  <text x="332" y="373" class="txt">UQ (date, team_or_person)</text>
+  <text x="332" y="390" class="txt">area, target (REAL), actual (REAL)</text>
+  <text x="332" y="407" class="txt">updated_at (TEXT)</text>
+  <rect x="600" y="310" width="230" height="130" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 608 310 H 822 Q 830 310 830 318 V 338 H 600 V 318 Q 600 310 608 310 Z" fill="#334155"/>
+  <text x="612" y="329" class="box-title-w">sub_assembly</text>
+  <text x="612" y="356" class="txt">PK id (TEXT)</text>
+  <text x="612" y="373" class="txt">UQ (date, item)</text>
+  <text x="612" y="390" class="txt">daily_capacity, target, actual</text>
+  <text x="612" y="407" class="txt">updated_at (TEXT)</text>
+  <rect x="860" y="310" width="220" height="130" rx="8" fill="#ecfeff" stroke="#0891b2" stroke-width="1.5"/>
+  <path d="M 868 310 H 1072 Q 1080 310 1080 318 V 338 H 860 V 318 Q 860 310 868 310 Z" fill="#0e7490"/>
+  <text x="872" y="329" class="box-title-w">custom_manpower</text>
+  <text x="872" y="356" class="txt">PK id (TEXT)</text>
+  <text x="872" y="373" class="txt">UQ (area, type, name)</text>
+  <text x="872" y="390" class="txt">type (worker|team), members</text>
+  <text x="872" y="407" class="txt">is_active, created_by</text>
+  <rect x="40" y="480" width="500" height="115" rx="8" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.5"/>
+  <path d="M 48 480 H 532 Q 540 480 540 488 V 508 H 40 V 488 Q 40 480 48 480 Z" fill="#4338ca"/>
+  <text x="52" y="499" class="box-title-w">what_if_scenarios (Isolated Simulation Storage)</text>
+  <text x="52" y="526" class="txt">PK id (TEXT), name, notes, created_by, created_at</text>
+  <text x="52" y="543" class="txt">scenario_data (JSON string storing inputs + calculated results)</text>
+  <text x="52" y="560" class="txt">Isolated from production tables; never mutates panels or plans</text>
+  <rect x="580" y="480" width="500" height="115" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+  <path d="M 588 480 H 1072 Q 1080 480 1080 488 V 508 H 580 V 488 Q 580 480 588 480 Z" fill="#b91c1c"/>
+  <text x="592" y="499" class="box-title-w">audit_logs + 13 Performance Indexes</text>
+  <text x="592" y="526" class="txt">PK id (TEXT), timestamp, user_id, username, action, entity_type, entity_id, details</text>
+  <text x="592" y="543" class="txt">Records logins, logouts, creates, bulk imports, starts, completes, holds, undos, restores</text>
+  <text x="592" y="560" class="txt">13 idx_* indexes on stage_history, panels, hold_history, monthly_plans, daily_status, audit_logs</text>
+  <path d="M 590 165 L 620 165" class="arrow"/>
+  <path d="M 590 120 Q 740 72 880 125" class="arrow"/>
+</svg>

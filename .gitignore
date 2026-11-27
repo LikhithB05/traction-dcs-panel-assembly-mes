@@ -1,0 +1,43 @@
+# Node dependencies
+node_modules/
+.npm/
+
+# Build artifacts
+dist/
+build/
+client/dist/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# SQLite Databases & Backups (Preserve data locally, never push to repo)
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-wal
+*.db-shm
+server/data/*.sqlite
+server/data/*.db
+/data/
+!server/src/data/
+!server/src/data/**
+
+# OS and IDE temporary files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# Scratch and temporary agent files
+scratch/
+BACKUPS/
+
+# Cloudflare Workers / Wrangler local state & secrets
+.wrangler/
+.dev.vars
+worker/.wrangler/
+worker/.dev.vars

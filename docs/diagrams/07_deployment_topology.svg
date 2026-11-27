@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 560" width="1120" height="560" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="560" fill="#ffffff"/>
+  <rect x="0" y="0" width="1120" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">Deployment Topology — Live Cloudflare Workers/D1 Edge vs Containerized Node.js</text>
+  <text x="32" y="56" class="subtitle">Migrated on 2026-11-26 from expired Railway container hosting to zero-cost Cloudflare Workers + D1 Edge Platform</text>
+  <line x1="32" y1="68" x2="1088" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="40" y="95" width="490" height="215" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+  <path d="M 48 95 H 522 Q 530 95 530 103 V 123 H 40 V 103 Q 40 95 48 95 Z" fill="#c2410c"/>
+  <text x="52" y="114" class="box-title-w">Production Target (Active): Cloudflare Edge</text>
+  <text x="52" y="141" class="txt">URL: https://bhel-portal.likhithb2005.workers.dev/</text>
+  <text x="52" y="158" class="txt">Frontend: client/dist served via Workers [assets] binding</text>
+  <text x="52" y="175" class="txt">   (not_found_handling = single-page-application, run_worker_first = true)</text>
+  <text x="52" y="192" class="txt">API Worker: worker/src/index.js (Hono router, &lt;1ms PBKDF2)</text>
+  <text x="52" y="209" class="txt">Database: Cloudflare D1 SQLite (bhel-portal-db, 7-day Time Travel)</text>
+  <text x="52" y="226" class="txt">Secrets: JWT_SECRET injected via `wrangler secret put` (excluded from repo)</text>
+
+  <rect x="590" y="95" width="490" height="215" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 598 95 H 1072 Q 1080 95 1080 103 V 123 H 590 V 103 Q 590 95 598 95 Z" fill="#334155"/>
+  <text x="602" y="114" class="box-title-w">Alternative Self-Hosted Target: Docker / Node.js</text>
+  <text x="602" y="141" class="txt">Docker 2-Stage Build (Dockerfile, node:22-alpine):</text>
+  <text x="602" y="158" class="txt">  Stage 1: npm install + vite build -&gt; client/dist</text>
+  <text x="602" y="175" class="txt">  Stage 2: server/ production deps + static serving on PORT 5000</text>
+  <text x="602" y="192" class="txt">Config Profiles: railway.json &amp; render.yaml (Render disk /var/data)</text>
+  <text x="602" y="209" class="txt">Persistence: Native node:sqlite WAL file at DB_PATH env var</text>
+  <text x="602" y="226" class="txt">Historical Note: Original Railway apps expired (HTTP 404); data migrated</text>
+
+  <rect x="40" y="345" width="1040" height="175" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 48 345 H 1072 Q 1080 345 1080 353 V 373 H 40 V 353 Q 40 345 48 345 Z" fill="#047857"/>
+  <text x="52" y="364" class="box-title-w">Local Development &amp; Isolated Verification Flow</text>
+  <text x="52" y="391" class="txt">Local Express Dev: `npm run server` (port 5000) + `npm run client` (Vite port 5173 proxying /api -&gt; 5000)</text>
+  <text x="52" y="408" class="txt">Local Worker Dev: `cd worker &amp;&amp; npx wrangler d1 migrations apply bhel-portal-db --local &amp;&amp; npx wrangler dev` (using local .dev.vars)</text>
+  <text x="52" y="425" class="txt">Automated Verification: `node --test server/tests/*.test.js` runs isolated HTTP + :memory: / disposable SQLite end-to-end tests</text>
+  <text x="52" y="442" class="txt">Strict Repo Hygiene: .sqlite, .dev.vars, .env, .wrangler/, node_modules/, and real D1 database_id excluded from public Git commits</text>
+
+</svg>

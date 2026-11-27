@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 610" width="1120" height="610" style="background:#ffffff">
+
+  <defs>
+    <style>
+      .title { font: 700 20px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .box-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-title-w { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .txt { font: 400 11.5px 'Segoe UI', Arial, sans-serif; fill: #1e293b; }
+      .txt-sm { font: 400 10.5px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .mono { font: 600 10.5px Consolas, 'Courier New', monospace; fill: #0f172a; }
+      .badge { font: 700 10px 'Segoe UI', Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #334155; stroke-width: 1.8; fill: none; marker-end: url(#ah); }
+      .arrow-blue { stroke: #2563eb; stroke-width: 1.8; fill: none; marker-end: url(#ah-blue); }
+      .arrow-dashed { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 5,4; fill: none; marker-end: url(#ah); }
+    </style>
+    <marker id="ah" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+    <marker id="ah-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1d4ed8"/>
+      <stop offset="50%" stop-color="#7e22ce"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="610" fill="#ffffff"/>
+  <rect x="0" y="0" width="1120" height="6" fill="url(#topGrad)"/>
+  <text x="32" y="38" class="title">Traction Converter Panel — Consolidated 8-Stage Assembly State Machine</text>
+  <text x="32" y="56" class="subtitle">Cross-department routing across KSM, PDR, and CRM (with shared Stage 3 HV Cabling &amp; consolidated QC/Testing)</text>
+  <line x1="32" y1="68" x2="1088" y2="68" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="45" y="110" width="225" height="118" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M 53 110 H 262 Q 270 110 270 118 V 138 H 45 V 118 Q 45 110 53 110 Z" fill="#0284c7"/>
+  <text x="57" y="129" class="box-title-w">1. Mech Stage 1</text>
+  <text x="57" y="156" class="txt">Owning Area: KSM</text>
+  <text x="57" y="173" class="txt">KSM-OP-1 / KSM-OP-2</text>
+  <text x="57" y="190" class="txt">Door removal</text>
+  <path d="M 270 169 L 310 169" class="arrow"/>
+  <rect x="310" y="110" width="225" height="118" rx="8" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
+  <path d="M 318 110 H 527 Q 535 110 535 118 V 138 H 310 V 118 Q 310 110 318 110 Z" fill="#7c3aed"/>
+  <text x="322" y="129" class="box-title-w">2. Mech Stage 2</text>
+  <text x="322" y="156" class="txt">Owning Area: PDR</text>
+  <text x="322" y="173" class="txt">PDR-MECH-1..4</text>
+  <text x="322" y="190" class="txt">Core assembly framing</text>
+  <path d="M 535 169 L 575 169" class="arrow"/>
+  <rect x="575" y="110" width="225" height="118" rx="8" fill="#f8fafc" stroke="#6d28d9" stroke-width="1.5"/>
+  <path d="M 583 110 H 792 Q 800 110 800 118 V 138 H 575 V 118 Q 575 110 583 110 Z" fill="#6d28d9"/>
+  <text x="587" y="129" class="box-title-w">3. HV Cabling</text>
+  <text x="587" y="156" class="txt">Owning Area: PDR/CRM</text>
+  <text x="587" y="173" class="txt">PDR Teams 1-5 OR</text>
+  <text x="587" y="190" class="txt">CRM Teams 1-9</text>
+  <path d="M 800 169 L 840 169" class="arrow"/>
+  <rect x="840" y="110" width="225" height="118" rx="8" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.5"/>
+  <path d="M 848 110 H 1057 Q 1065 110 1065 118 V 138 H 840 V 118 Q 840 110 848 110 Z" fill="#7c3aed"/>
+  <text x="852" y="129" class="box-title-w">4. Mech Stage 3</text>
+  <text x="852" y="156" class="txt">Owning Area: PDR</text>
+  <text x="852" y="173" class="txt">Resonant cap, U busbar,</text>
+  <text x="852" y="190" class="txt">NRV (PDR Mech)</text>
+  <rect x="45" y="305" width="225" height="118" rx="8" fill="#f8fafc" stroke="#9333ea" stroke-width="1.5"/>
+  <path d="M 53 305 H 262 Q 270 305 270 313 V 333 H 45 V 313 Q 45 305 53 305 Z" fill="#9333ea"/>
+  <text x="57" y="324" class="box-title-w">5. LV Wiring</text>
+  <text x="57" y="351" class="txt">Owning Area: PDR</text>
+  <text x="57" y="368" class="txt">PDR Team 6 primary</text>
+  <text x="57" y="385" class="txt">(Teams 3-5 overflow)</text>
+  <path d="M 270 364 L 310 364" class="arrow"/>
+  <rect x="310" y="305" width="225" height="118" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M 318 305 H 527 Q 535 305 535 313 V 333 H 310 V 313 Q 310 305 318 305 Z" fill="#0284c7"/>
+  <text x="322" y="324" class="box-title-w">6. Two-Test QC &amp; Testing</text>
+  <text x="322" y="351" class="txt">Owning Area: KSM</text>
+  <text x="322" y="368" class="txt">KSM QC &amp; External</text>
+  <text x="322" y="385" class="txt">Testing (KSM tracked)</text>
+  <path d="M 535 364 L 575 364" class="arrow"/>
+  <rect x="575" y="305" width="225" height="118" rx="8" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5"/>
+  <path d="M 583 305 H 792 Q 800 305 800 313 V 333 H 575 V 313 Q 575 305 583 305 Z" fill="#0284c7"/>
+  <text x="587" y="324" class="box-title-w">7. PD Activity</text>
+  <text x="587" y="351" class="txt">Owning Area: KSM</text>
+  <text x="587" y="368" class="txt">KSM-OP-1 / KSM-OP-2</text>
+  <text x="587" y="385" class="txt">Cover &amp; dressing</text>
+  <path d="M 800 364 L 840 364" class="arrow"/>
+  <rect x="840" y="305" width="225" height="118" rx="8" fill="#f8fafc" stroke="#059669" stroke-width="1.5"/>
+  <path d="M 848 305 H 1057 Q 1065 305 1065 313 V 333 H 840 V 313 Q 840 305 848 305 Z" fill="#059669"/>
+  <text x="852" y="324" class="box-title-w">8. PQ &amp; Dispatch</text>
+  <text x="852" y="351" class="txt">Owning Area: KSM</text>
+  <text x="852" y="368" class="txt">KSM QC / Despatch</text>
+  <text x="852" y="385" class="txt">-&gt; Status: Done</text>
+  <path d="M 960 228 L 960 265 L 157 265 L 157 305" class="arrow"/>
+  <rect x="45" y="455" width="1020" height="125" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <path d="M 53 455 H 1057 Q 1065 455 1065 463 V 483 H 45 V 463 Q 45 455 53 455 Z" fill="#334155"/>
+  <text x="57" y="474" class="box-title-w">Operational State Transitions, Holds, Overload Gate &amp; Undo Governance</text>
+  <text x="57" y="501" class="txt">Panel Lifecycle Statuses: Waiting -&gt; Start Stage (worker check + capacity check HTTP 409) -&gt; In Progress -&gt; Complete Stage -&gt; Next Stage (Waiting) or Done</text>
+  <text x="57" y="518" class="txt">Interruptions: Any In Progress panel can transition to Held with mandatory reason (logged to hold_history) and Resume back to In Progress</text>
+  <text x="57" y="535" class="txt">Admin Undo (POST /api/panels/:id/undo): AKR/CKG only; reverses 1 completed stage at a time; blocked if next stage already In Progress or Held</text>
+  <text x="57" y="552" class="txt">Legacy Migration Mapping: Historical stage_history stage numbers 7, 8, 9, 10 map cleanly to consolidated stages 6, 7, 8 via getStageDefinition()</text>
+</svg>
